@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Metadata -->
+    <title>Arisudhan P | Computer Science Engineer & UI/UX Designer</title>
+    <meta name="title" content="Arisudhan P | Computer Science Engineer & UI/UX Designer" />
+    <meta name="description" content="Personal portfolio of Arisudhan P — Computer Science Engineering student at Kongu Engineering College. Passionate about full-stack engineering, algorithmic problem solving, Figma, and human-centered UI/UX design." />
+    <meta name="keywords" content="Arisudhan P, Arisudhan, Kongu Engineering College, Software Engineer, Full Stack, UI/UX Designer, Figma, React, Tailwind CSS" />
+    <meta name="author" content="Arisudhan P" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/aathavanr229/ari_portfolio" />
+    <meta property="og:title" content="Arisudhan P | Computer Science Engineer & UI/UX Designer" />
+    <meta property="og:description" content="Portfolio showcasing full-stack projects, UI/UX design craft, technical skills, and problem-solving passion." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='800' font-size='46' fill='white'>AP</text></svg>" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN (v3.4) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#eef2ff',
+                100: '#e0e7ff',
+                500: '#6366f1',
+                600: '#4f46e5',
+                700: '#4338ca',
+                800: '#3730a3',
+                900: '#312e81',
+              }
+            },
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+              heading: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Lucide Icons & Canvas Confetti -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300 relative min-h-screen">
+    
+    <!-- Subtle Background Glow Orbs -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl animate-pulse-glow"></div>
+      <div class="absolute top-1/3 -right-40 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+      <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-pink-500/10 dark:bg-pink-500/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/70 dark:bg-slate-950/70 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+        
+        <!-- Brand Logo / Monogram -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 p-0.5 shadow-md group-hover:shadow-indigo-500/30 transition-shadow">
+            <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+              <span class="font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400 text-sm tracking-wider">AP</span>
+            </div>
+          </div>
+          <div>
+            <span class="font-heading font-bold text-slate-900 dark:text-white text-base tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Arisudhan P</span>
+            <span class="block text-[11px] font-medium text-slate-500 dark:text-slate-400">CS Engineer & UI/UX</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="#about" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About Me</a>
+          <a href="#skills" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a>
+          <a href="#projects" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a>
+          <a href="#contact" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Side: Dark Mode Toggle & Quick Email CTA -->
+        <div class="flex items-center gap-3">
+          <button onclick="toggleTheme()" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors" aria-label="Toggle Dark/Light Mode">
+            <span class="dark:hidden"><i data-lucide="moon" class="w-4 h-4"></i></span>
+            <span class="hidden dark:inline"><i data-lucide="sun" class="w-4 h-4 text-amber-400"></i></span>
+          </button>
+
+          <a href="mailto:arisudhanp.24cse@kongu.edu" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs tracking-wide shadow-sm hover:shadow-indigo-500/25 transition">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>Hire / Connect</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl px-4 py-4 space-y-3">
+        <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-900">About Me</a>
+        <a href="#skills" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-900">Skills</a>
+        <a href="#projects" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-900">Projects</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-900">Contact</a>
+        <a href="mailto:arisudhanp.24cse@kongu.edu" class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-xs text-center">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          arisudhanp.24cse@kongu.edu
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10">
+
+      <!-- ==================== HERO SECTION ==================== -->
+      <section id="hero" class="pt-16 pb-24 md:pt-28 md:pb-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column: Copy & Actions -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            
+            <!-- Availability Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/80 text-emerald-700 dark:text-emerald-300 text-xs font-semibold tracking-wide shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+              <span>Available for Internships & Full-Stack Projects</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+              Hi, I'm <span class="gradient-text">Arisudhan P</span>.
+              <span class="block text-2xl sm:text-3xl lg:text-4xl mt-2 text-slate-700 dark:text-slate-300 font-bold">
+                Crafting Scalable Code & Human-Centered UI/UX Design.
+              </span>
+            </h1>
+
+            <!-- Bio -->
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+              Computer Science and Engineering undergraduate passionate about bridging the gap between rigorous algorithmic logic and intuitive, aesthetic user interfaces. I build performant full-stack web applications, optimize data structures, and craft pixel-perfect experiences in <strong class="text-slate-900 dark:text-white font-semibold">Figma</strong>.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md hover:shadow-indigo-500/25 transition">
+                <span>Explore Projects</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Get In Touch</span>
+              </a>
+
+              <button onclick="copyEmail(event)" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-indigo-400 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-xs font-mono font-medium transition" title="Click to copy email">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span>arisudhanp.24cse@kongu.edu</span>
+              </button>
+            </div>
+
+            <!-- Social Links & Quick Tags -->
+            <div class="pt-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-500 dark:text-slate-400">
+              <a href="https://github.com/aathavanr229/ari_portfolio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-slate-900 dark:hover:text-white transition">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:arisudhanp.24cse@kongu.edu" class="inline-flex items-center gap-2 hover:text-slate-900 dark:hover:text-white transition">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Direct Mail</span>
+              </a>
+              <span class="inline-flex items-center gap-1.5 text-xs text-slate-500">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-500"></i>
+                <span>Kongu Engineering College, TN</span>
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Hero Cards & Visual Showcase -->
+          <div class="lg:col-span-5 relative flex justify-center">
+            
+            <!-- Central Visual Glass Card -->
+            <div class="relative w-full max-w-md rounded-3xl border border-slate-200/90 dark:border-slate-800/90 bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl p-7 shadow-2xl space-y-6">
+              
+              <!-- Card Header -->
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-600 to-pink-500 flex items-center justify-center text-white font-extrabold text-lg shadow-md">
+                    AP
+                  </div>
+                  <div>
+                    <h2 class="text-base font-bold text-slate-900 dark:text-white font-heading">Arisudhan P</h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">B.E. CSE @ Kongu</p>
+                  </div>
+                </div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+              </div>
+
+              <!-- Dedicated Figma & UI/UX Hero Showcase (Prominent Request) -->
+              <div class="p-4 rounded-2xl figma-badge-glow transition-all">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-sm">
+                      <i data-lucide="figma" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300">Design Specialty</span>
+                  </div>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-200 dark:bg-purple-900/60 text-purple-800 dark:text-purple-200 font-semibold">Highlighted</span>
+                </div>
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Figma & UI/UX Design Systems</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Design tokens, interactive prototypes, auto-layout architecture, and WCAG AA accessibility standards.</p>
+              </div>
+
+              <!-- Interactive Tech Pillars -->
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-medium text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
+                    <i data-lucide="code-2" class="w-3.5 h-3.5 text-indigo-500"></i>
+                    Full-Stack Engineering
+                  </span>
+                  <span class="font-mono font-semibold text-slate-900 dark:text-slate-100">React • Node • SQL</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full w-[90%]"></div>
+                </div>
+
+                <div class="flex items-center justify-between text-xs pt-1">
+                  <span class="font-medium text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
+                    <i data-lucide="layout" class="w-3.5 h-3.5 text-pink-500"></i>
+                    UI/UX & Prototyping
+                  </span>
+                  <span class="font-mono font-semibold text-slate-900 dark:text-slate-100">Figma • Tailwind</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full w-[95%]"></div>
+                </div>
+
+                <div class="flex items-center justify-between text-xs pt-1">
+                  <span class="font-medium text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
+                    <i data-lucide="cpu" class="w-3.5 h-3.5 text-emerald-500"></i>
+                    Core CS & DSA
+                  </span>
+                  <span class="font-mono font-semibold text-slate-900 dark:text-slate-100">C++ • Java • Algorithms</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                  <div class="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full w-[88%]"></div>
+                </div>
+              </div>
+
+              <!-- Bottom Stats Pill -->
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400">
+                <span>Batch: 2024-2028</span>
+                <span class="text-indigo-600 dark:text-indigo-400 font-semibold">100% Responsive</span>
+              </div>
+
+            </div>
+
+            <!-- Floating Badge 1: Clean Code -->
+            <div class="absolute -top-4 -left-6 hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-lg text-xs font-semibold animate-float-slow">
+              <i data-lucide="terminal" class="w-4 h-4 text-emerald-500"></i>
+              <span>Clean Code First</span>
+            </div>
+
+            <!-- Floating Badge 2: User Centric -->
+            <div class="absolute -bottom-6 -right-4 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-lg text-xs font-semibold animate-float-delayed">
+              <i data-lucide="sparkles" class="w-4 h-4 text-purple-500"></i>
+              <span>Pixel Perfection</span>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ==================== ABOUT ME SECTION ==================== -->
+      <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/60">
+            About Me
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+            Academic Background & Engineering Mindset
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            A solid foundation in Computer Science principles, coupled with a deep dedication to building clean, maintainable software and user-first digital products.
+          </p>
+        </div>
+
+        <!-- 3 Feature Pillars Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          
+          <!-- Pillar 1: Academic Background -->
+          <div class="interactive-card p-7 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl">
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-5">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mb-2">Academic Foundation</h3>
+            <p class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold mb-3">Kongu Engineering College (Autonomous)</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Pursuing Bachelor of Engineering in Computer Science (2024–2028). Strong grounding in Object-Oriented Programming, Operating Systems, Database Management Systems, and Discrete Mathematics.
+            </p>
+          </div>
+
+          <!-- Pillar 2: Technical Interests -->
+          <div class="interactive-card p-7 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/60 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-5">
+              <i data-lucide="code" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mb-2">Technical Interests</h3>
+            <p class="text-xs text-purple-600 dark:text-purple-400 font-semibold mb-3">Full-Stack & Systems</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Passionate about full-stack web architecture, API performance tuning, algorithmic problem solving, and building responsive applications that feel instantaneous.
+            </p>
+          </div>
+
+          <!-- Pillar 3: UI/UX & Clean Design Philosophy -->
+          <div class="interactive-card p-7 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl">
+            <div class="w-12 h-12 rounded-xl bg-pink-100 dark:bg-pink-950/60 flex items-center justify-center text-pink-600 dark:text-pink-400 mb-5">
+              <i data-lucide="palette" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mb-2">User-Centric Design</h3>
+            <p class="text-xs text-pink-600 dark:text-pink-400 font-semibold mb-3">Figma • Design Tokens</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Firm believer that code is only as good as the user experience it delivers. I combine Figma wireframing and prototyping with rigorous accessibility, clean spacing, and modern typography.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Academic & Technical Metrics Banner -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-r from-indigo-50/60 via-purple-50/40 to-pink-50/60 dark:from-indigo-950/20 dark:via-purple-950/20 dark:to-pink-950/20 p-6 sm:p-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <p class="text-3xl sm:text-4xl font-extrabold font-heading gradient-text">2024–28</p>
+              <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1">B.E. Computer Science</p>
+            </div>
+            <div>
+              <p class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">4+</p>
+              <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1">Key Portfolio Projects</p>
+            </div>
+            <div>
+              <p class="text-3xl sm:text-4xl font-extrabold font-heading text-purple-600 dark:text-purple-400">Figma</p>
+              <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1">Design Systems & UI/UX</p>
+            </div>
+            <div>
+              <p class="text-3xl sm:text-4xl font-extrabold font-heading text-emerald-600 dark:text-emerald-400">100%</p>
+              <p class="text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1">Responsive Code</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ==================== SKILLS SECTION (Interactive Grid) ==================== -->
+      <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800/60">
+            Technical Arsenal
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+            Skills & Competencies
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            Categorized technical stack spanning core algorithms, modern web development, developer tooling, and specialized UI/UX design craft.
+          </p>
+        </div>
+
+        <!-- SPECIAL HIGHLIGHT: Figma & UI/UX Design Banner (User Prominent Requirement) -->
+        <div class="mb-12 rounded-3xl figma-badge-glow p-6 sm:p-8 relative overflow-hidden transition-all">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-8 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-800 dark:text-purple-200 text-xs font-bold uppercase tracking-wide border border-purple-400/40">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-500"></i>
+                <span>Featured Expertise: Design & UI/UX</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
+                Figma & Human-Centered UI/UX Engineering
+              </h3>
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Dedicated proficiency in turning complex user requirements into elegant visual hierarchies. Experienced in building comprehensive design systems, component libraries, responsive breakpoints, auto-layout variants, and interactive micro-prototypes.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-purple-300 dark:border-purple-800 text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500"></i>
+                  Figma Component Libraries & Auto-Layout
+                </span>
+                <span class="px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-purple-300 dark:border-purple-800 text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500"></i>
+                  Design Tokens (Colors, Typography, Spacing)
+                </span>
+                <span class="px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-purple-300 dark:border-purple-800 text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500"></i>
+                  High-Fidelity Interactive Prototyping
+                </span>
+                <span class="px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-purple-300 dark:border-purple-800 text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500"></i>
+                  WCAG Accessibility & Usability Testing
+                </span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex justify-center">
+              <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-600 p-1 shadow-2xl flex items-center justify-center animate-float-slow">
+                <div class="w-full h-full bg-slate-950 rounded-[22px] flex flex-col items-center justify-center p-4 text-center">
+                  <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-3">
+                    <i data-lucide="figma" class="w-8 h-8 text-pink-400"></i>
+                  </div>
+                  <span class="font-heading font-bold text-white text-base">Figma Master</span>
+                  <span class="text-xs text-purple-300 mt-0.5">Wireframes to Code</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3 Core Skills Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Category 1: Core CS & Programming -->
+          <div class="p-7 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Core CS & Languages</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Computer Science Fundamentals</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="terminal" class="w-4 h-4 text-indigo-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">C & C++</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="coffee" class="w-4 h-4 text-amber-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Java</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="binary" class="w-4 h-4 text-emerald-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Python</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="git-branch" class="w-4 h-4 text-blue-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Data Structures</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="layers" class="w-4 h-4 text-purple-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Algorithms</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="box" class="w-4 h-4 text-pink-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">OOP & OS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Web Development & Databases -->
+          <div class="p-7 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950/60 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                <i data-lucide="globe" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Web & Databases</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Full-Stack Architecture</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="atom" class="w-4 h-4 text-cyan-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">React.js</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="code" class="w-4 h-4 text-amber-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">JavaScript ES6+</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="wind" class="w-4 h-4 text-teal-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Tailwind CSS</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="server" class="w-4 h-4 text-emerald-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Node & Express</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="database" class="w-4 h-4 text-indigo-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">MongoDB</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="table" class="w-4 h-4 text-sky-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">SQL & MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Developer Tools & Version Control -->
+          <div class="p-7 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl space-y-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Developer Tools</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Workflow & Deployment</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="git-pull-request" class="w-4 h-4 text-orange-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Git & GitHub</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Vite & Bundlers</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="triangle" class="w-4 h-4 text-slate-900 dark:text-white"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Vercel Deploy</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="send" class="w-4 h-4 text-orange-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Postman APIs</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="code-2" class="w-4 h-4 text-blue-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">VS Code</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <i data-lucide="terminal-square" class="w-4 h-4 text-emerald-500"></i>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">Linux / Bash</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==================== PROJECTS SECTION ==================== -->
+      <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/60">
+            Selected Works
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+            Featured Technical Projects
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            Card-based showcase displaying real-world web applications, visual computer science playgrounds, and UI/UX design systems.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button onclick="filterProjects('all', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 text-white shadow-sm transition">
+            All Projects (4)
+          </button>
+          <button onclick="filterProjects('design', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Design & UI/UX
+          </button>
+          <button onclick="filterProjects('web', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Full-Stack Web
+          </button>
+          <button onclick="filterProjects('core', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Core CS & Visualizers
+          </button>
+          <button onclick="filterProjects('tools', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Developer Tools
+          </button>
+        </div>
+
+        <!-- Projects Grid Container (Dynamic) -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Rendered via JavaScript -->
+        </div>
+
+        <!-- GitHub Repository Direct Link Banner -->
+        <div class="mt-14 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center shrink-0">
+              <i data-lucide="github" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Explore Source Codes & Commits</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">All portfolio repositories are maintained under GitHub username @aathavanr229</p>
+            </div>
+          </div>
+          <a href="https://github.com/aathavanr229/ari_portfolio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold text-xs transition shrink-0">
+            <span>View on GitHub</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </section>
+
+
+      <!-- ==================== CONTACT SECTION ==================== -->
+      <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left Column: Contact Intro & Quick Details -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/60">
+              Get In Touch
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+              Let's Build Something Exceptional Together.
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+              Whether you have an internship opportunity, a freelance project, an open-source collaboration, or simply want to chat about UI/UX design and software architecture, feel free to drop me a note!
+            </p>
+
+            <!-- Direct Contact Cards -->
+            <div class="space-y-4 pt-2">
+              
+              <!-- Direct Email Card -->
+              <div class="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="block text-[11px] font-semibold uppercase tracking-wider text-slate-400">Primary Email</span>
+                    <a href="mailto:arisudhanp.24cse@kongu.edu" class="text-sm font-semibold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 font-mono transition">
+                      arisudhanp.24cse@kongu.edu
+                    </a>
+                  </div>
+                </div>
+                <button onclick="copyEmail(event)" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Copy Email">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <!-- Location Card -->
+              <div class="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="block text-[11px] font-semibold uppercase tracking-wider text-slate-400">Institution & Location</span>
+                  <span class="text-sm font-semibold text-slate-900 dark:text-white">
+                    Kongu Engineering College, Perundurai, Tamil Nadu
+                  </span>
+                </div>
+              </div>
+
+              <!-- Response Time Badge -->
+              <div class="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="block text-[11px] font-semibold uppercase tracking-wider text-slate-400">Availability</span>
+                  <span class="text-sm font-semibold text-slate-900 dark:text-white">
+                    Quick responses within 24 hours
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right Column: Sleek Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="p-7 sm:p-9 rounded-3xl border border-slate-200/90 dark:border-slate-800/90 bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl shadow-xl">
+              
+              <div class="mb-6">
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white">Send a Message</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Directly compose an email to arisudhanp.24cse@kongu.edu</p>
+              </div>
+
+              <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="senderName" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                      Your Name <span class="text-rose-500">*</span>
+                    </label>
+                    <input type="text" id="senderName" required placeholder="e.g. John Doe" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+                  </div>
+
+                  <div>
+                    <label for="senderEmail" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                      Your Email <span class="text-rose-500">*</span>
+                    </label>
+                    <input type="email" id="senderEmail" required placeholder="e.g. john@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="senderSubject" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                    Subject
+                  </label>
+                  <input type="text" id="senderSubject" placeholder="e.g. Project Inquiry / Internship Opportunity" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+                </div>
+
+                <div>
+                  <label for="senderMessage" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                    Message <span class="text-rose-500">*</span>
+                  </label>
+                  <textarea id="senderMessage" rows="4" required placeholder="Share details about your idea, requirements, or opportunity..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none"></textarea>
+                </div>
+
+                <div class="pt-2">
+                  <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md hover:shadow-indigo-500/25 transition">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Send Message to Arisudhan</span>
+                  </button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="border-t border-slate-200/80 dark:border-slate-800/80 bg-white/50 dark:bg-slate-950/50 py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-extrabold text-xs">
+            AP
+          </div>
+          <div>
+            <p class="text-sm font-bold text-slate-900 dark:text-white font-heading">Arisudhan P</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Computer Science Engineering • Kongu Engineering College</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400">
+          <a href="#hero" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Back to Top</a>
+          <a href="https://github.com/aathavanr229/ari_portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">GitHub</a>
+          <a href="mailto:arisudhanp.24cse@kongu.edu" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Email</a>
+        </div>
+
+        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+          © 2026 Arisudhan P. Built with Tailwind CSS & Figma.
+        </p>
+
+      </div>
+    </footer>
+
+
+    <!-- ==================== INTERACTIVE PROJECT MODAL ==================== -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+      <div id="modalDialog" class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-2xl scale-95 transition-transform duration-300">
+        
+        <!-- Close Button -->
+        <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition z-20" aria-label="Close Modal">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Modal Dynamic Content Container -->
+        <div id="modalContent"></div>
+
+      </div>
+    </div>
+
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-2xl bg-slate-900/95 dark:bg-white/95 text-white dark:text-slate-900 shadow-2xl border border-slate-800 dark:border-slate-200 text-xs sm:text-sm font-semibold pointer-events-none">
+      <div id="toastIcon"></div>
+      <span id="toastMessage">Notification</span>
+    </div>
+
+    <!-- Application Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

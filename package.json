@@ -1,0 +1,11 @@
+{
+  "name": "arisudhan-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Website for Arisudhan P — Computer Science Engineering Student & UI/UX Designer",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "author": "Arisudhan P <arisudhanp.24cse@kongu.edu>",
+  "license": "MIT"
+}
